@@ -13,6 +13,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var isbn = Libro()
     @IBOutlet weak var isbnIN: UITextField!
     @IBOutlet weak var textos: UITextView!
+    @IBOutlet weak var urlImagen: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,21 +28,25 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         var isbnTemp = ""
-        var temp = ""
+        var temp = ("","","")
         isbnTemp = isbnIN.text!
         temp = isbn.conexionResFul(isbnTemp)
-        if(temp == "error"){
+        if(temp.0 == "error" && temp.1 == "error" ){
             let alerta = UIAlertController(title: "Error", message: "Error en la conexión", preferredStyle: UIAlertControllerStyle.Alert)
             alerta.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
             presentViewController(alerta, animated: true, completion: nil)
             isbnIN.resignFirstResponder()
-        }else if(temp == "{}"){
+        }else if(temp.0 == "{}"){
             let alerta = UIAlertController(title: "Error", message: "No encontro el libro", preferredStyle: UIAlertControllerStyle.Alert)
             alerta.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
             presentViewController(alerta, animated: true, completion: nil)
             isbnIN.resignFirstResponder()
         }else{
-            textos.text = isbn.conexionResFul(isbnTemp)
+            var titulo = ("Título: ","","  Autores: ","")
+            titulo.1 = temp.0
+            titulo.3 = temp.1
+            textos.text = titulo.0 + titulo.1 + titulo.2 + titulo.3
+            urlImagen.text = temp.2
             isbnIN.resignFirstResponder()
         }
         return true

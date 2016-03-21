@@ -63,12 +63,6 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xNt-4j-4hq">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="3bw-4O-jZY">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -77,6 +71,21 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="0qN-p0-pWC"/>
                                 </connections>
                             </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xNt-4j-4hq">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHa-bV-CHw">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="57" y="465" width="286" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -87,7 +96,7 @@
                                 <variation key="widthClass=compact" constant="-5"/>
                             </constraint>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xNt-4j-4hq" secondAttribute="bottom" constant="125" id="8TP-vO-MxO">
-                                <variation key="widthClass=compact" constant="106"/>
+                                <variation key="widthClass=compact" constant="156"/>
                             </constraint>
                             <constraint firstItem="3bw-4O-jZY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="37" id="9g6-l1-OWJ"/>
                             <constraint firstItem="3bw-4O-jZY" firstAttribute="top" secondItem="n73-Wt-dyB" secondAttribute="bottom" constant="8" symbolic="YES" id="Efb-uH-JTx"/>
@@ -111,7 +120,9 @@
                             <constraint firstItem="C37-yP-QSu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="132" id="enx-Ww-iuu">
                                 <variation key="widthClass=compact" constant="136"/>
                             </constraint>
-                            <constraint firstItem="xNt-4j-4hq" firstAttribute="top" secondItem="3bw-4O-jZY" secondAttribute="bottom" constant="37" id="vvL-AE-Suf"/>
+                            <constraint firstItem="xNt-4j-4hq" firstAttribute="top" secondItem="3bw-4O-jZY" secondAttribute="bottom" constant="37" id="vvL-AE-Suf">
+                                <variation key="widthClass=compact" constant="18"/>
+                            </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="C37-yP-QSu" secondAttribute="trailing" constant="39" id="wRk-ca-cFq">
                                 <variation key="widthClass=compact" constant="5"/>
                             </constraint>
@@ -124,8 +135,9 @@
                                 <exclude reference="5Eh-iU-MgZ"/>
                                 <exclude reference="C37-yP-QSu"/>
                                 <exclude reference="n73-Wt-dyB"/>
-                                <exclude reference="xNt-4j-4hq"/>
                                 <exclude reference="3bw-4O-jZY"/>
+                                <exclude reference="xNt-4j-4hq"/>
+                                <exclude reference="hHa-bV-CHw"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="8TP-vO-MxO"/>
@@ -151,8 +163,9 @@
                                 <include reference="5Eh-iU-MgZ"/>
                                 <include reference="C37-yP-QSu"/>
                                 <include reference="n73-Wt-dyB"/>
-                                <include reference="xNt-4j-4hq"/>
                                 <include reference="3bw-4O-jZY"/>
+                                <include reference="xNt-4j-4hq"/>
+                                <include reference="hHa-bV-CHw"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="8TP-vO-MxO"/>
@@ -177,6 +190,7 @@
                     <connections>
                         <outlet property="isbnIN" destination="3bw-4O-jZY" id="xHd-c3-JtR"/>
                         <outlet property="textos" destination="xNt-4j-4hq" id="cLz-GK-ftu"/>
+                        <outlet property="urlImagen" destination="hHa-bV-CHw" id="cIx-jZ-UUR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
